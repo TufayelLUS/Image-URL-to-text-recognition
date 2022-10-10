@@ -29,10 +29,7 @@ def imageToText(link):
     tmp = pytesseract.image_to_string(
         imop(image_name), config='--psm 6 --oem 3')
     os.remove(image_name)
-    try:
-        return tmp.split('\n')[0]
-    except:
-        return tmp
+    return tmp
 
 
 if __name__ == "__main__":
